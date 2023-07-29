@@ -3,14 +3,20 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import Flask
+from flask import Flask, Blueprint
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from importlib import import_module
+from apps.home import blueprint
+from flask_restx import Api
+
 
 
 db = SQLAlchemy()
 login_manager = LoginManager()
+api = Api(title='API Empresas para eStracta',
+    description='Desenvolvida como teste por Roger Borges.',)
+
 
 
 def register_extensions(app):
@@ -38,11 +44,10 @@ from apps.authentication.oauth import github_blueprint
 
 def create_app(config):
     app = Flask(__name__)
+    api.init_app(app)
     app.config.from_object(config)
     register_extensions(app)
-
     app.register_blueprint(github_blueprint, url_prefix="/login")
-    
     register_blueprints(app)
     configure_database(app)
     return app
