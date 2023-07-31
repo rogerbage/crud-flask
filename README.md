@@ -1,62 +1,24 @@
-# [Black Dashboard Flask](https://www.creative-tim.com/product/black-dashboard-flask) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Dashboard,%20a%20free%20Material%20Bootstrap%204%20Admin%20Template%20%E2%9D%A4%EF%B8%8F%20https%3A//bit.ly/2Lyat1Y%20%23bootstrap%20%23material%20%23design%20%23developers%20%23freebie%20%20via%20%40CreativeTim)
+## CRUD em Flask para registro de empresas, por Roger Borges
 
- ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-flask.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-flask/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-flask.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-flask/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
-![Black Dashboard Flask - Admin Dashboard coded in Django.](https://github.com/creativetimofficial/black-dashboard-flask/blob/master/media/black-dashboard-flask-intro.gif)
 
-<br />
-
-> Features:
-
-- ✅ `Up-to-date dependencies`
-- ✅ Black Dashboard, BS4 Design
-- ✅ `DB Tools`: SQLAlchemy ORM, `Flask-Migrate` (schema migrations)
-- ✅ `Persistence`: SQLite (dev), MySql (prod)
-- ✅ `Authentication`: Session Based, `OAuth` via Github
-- ✅ `Deployment`: Docker, Page Compression (Flask-Minify) 
-
-<br />
-
-## Table of Contents
-
-* [Demo](#demo)
-* [Docker Support](#docker-support)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-
-<br />
-
-## Demo
-
-> To authenticate use the default credentials ***test / pass*** or create a new user on the [registration page](https://www.creative-tim.com/live/black-dashboard-flask).
-
-- **Black Dashboard Flask** [Login Page](https://www.creative-tim.com/live/black-dashboard-flask)
-
-<br />
-
-## Docker Support
-
-> Get the code
+## Deploy com Docker
+> Baixe o repositório
 
 ```bash
-$ git clone https://github.com/app-generator/black-dashboard-flask.git
+$ https://github.com/rogerbage/crud-flask.git
 $ cd black-dashboard-flask
 ```
 
-> Start the app in Docker
+> Inicie o App
 
 ```bash
 $ docker-compose up --build 
 ```
 
-Visit `http://localhost:5085` in your browser. The app should be up & running.
+Visite `http://localhost:5085` se veja a documentação.
+
+Visite `http://localhost:5085/loaddata`  para pré carregar o banco com dados.
 
 <br />
 
