@@ -4,6 +4,8 @@ from apps.home.models import Empresa
 from apps import db
 from sqlalchemy import exc, asc, desc
 import re
+import os 
+import json
 
 class empresalib:
 
@@ -328,6 +330,52 @@ class empresalib:
             return (response), 500
     #####################################################################
         
+
+#####################################################################
+    def loadEmpresas(data):
+        filename = 'apps/home/data/empresas.json'
+        if not os.path.exists(filename):
+            response = {
+                "type": "fail",
+                "message": "Arquivo json com empresas não encontrado.",
+            }
+            return (response), 404
+
+
+        with open(filename, 'r') as jsonFile:
+            jsonStr = jsonFile.read()
+            jsonData = json.loads(jsonStr)
+            for empresa in jsonData['empresas']:
+                print(empresa['cnpj'])
+                empresa = Empresa(
+                    cnpj=empresa['cnpj'],
+                    nome_razao=empresa['nome'],
+                    nome_fantasia=empresa['nome'],
+                    cnae=1234567
+                )
+
+                try:
+                    db.session.add(empresa)
+                    db.session.commit()
+                    
+                except exc.SQLAlchemyError as error:
+                    print("SQLALCHEMYERROR: ", error)
+                    response = {
+                        "type": "fail",
+                        "message": "Erro ao salvar empresas no banco.",
+                        "info": "Tente novamente mais tarde."
+                    }
+                    return response, 500 
+
+        response = {
+                "type": "success",
+                "message": "Itens carregados"
+            }
+        return (response), 200
+
+
+
+
 
     #####################################################################
     def validar_cnpj(cnpj):

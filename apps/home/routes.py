@@ -6,6 +6,7 @@ from flask_restx import Resource
 from apps.home.empresas import empresalib
 
 
+
 empresaModel = empresalib.getEmpresaModel()
 sortModel = empresalib.getSortModel()
 updateModel = empresalib.getUpdateModel()
@@ -124,3 +125,19 @@ class EmpresaById(Resource):
 
 #######################################################################################        
 
+
+#####################################################################################
+@api.route('/api/loaddata')
+class LoadEmpresaApi(Resource):
+    
+    ##########################################    
+    @api.doc(description="Load de empresas no banco.")
+    @api.response(200, 'Sucesso.')
+
+    def get(self):
+        data = sortModel.parse_args()
+        return empresalib.loadEmpresas(data)
+    #############################################
+    
+
+##########################################################################################
