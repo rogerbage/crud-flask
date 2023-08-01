@@ -6,8 +6,8 @@
 > Baixe o repositório
 
 ```bash
-$ https://github.com/rogerbage/crud-flask.git
-$ cd black-dashboard-flask
+$ git clone https://github.com/rogerbage/crud-flask.git
+$ cd crud-flask
 ```
 
 > Inicie o App
